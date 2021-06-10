@@ -57,7 +57,7 @@ if ($url == '/') {
         $viewObj = new $viewName($controllerObj, new $modelName);
 
         //fetch the data passed from model
-        $data = $viewObj->home();
+        $data = $viewObj->$requestedController();
 
         //render the view
         require_once __DIR__ . '/Views/'. $requestedController . '.php';

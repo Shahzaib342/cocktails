@@ -1,3 +1,7 @@
+<?php
+include('config/session.php');
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -21,6 +25,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
+    <!-- External JS Fils -->
+    <script src="../assets/js/login.js"></script>
     <!-- External CSS file -->
     <link href="../assets/css/app.css" rel="stylesheet" type="text/css">
     <!-- Font -->
@@ -31,14 +37,21 @@
 </head>
 
 <body>
+<?php
+include('includes/header.php');
+include('includes/sidebar.php')
+?>
 
 <!-- Add your site or application content here -->
 <div class="container">
-    <h1>Home Page <?php echo $data; ?> </h1>
+    <?php
+    if (!isset($_SESSION) || $_SESSION["session_id"] == "") {
+        echo "You are not allowed to access the admin features";
+        die();
+    }
+    ?>
+    <h1>This is our cocktail Home Page message: <?php echo $data; ?> </h1>
 </div>
-
-
-<script src="../assets/js/home.js"></script>
 
 </body>
 </html>
