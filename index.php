@@ -57,10 +57,11 @@ if ($url == '/') {
         $viewObj = new $viewName($controllerObj, new $modelName);
 
         //fetch the data passed from model
-        $data = $viewObj->$requestedController();
-
+        $view = $requestedAction == "" ? $requestedController : $requestedAction;
+        $data = $viewObj->$view();
+;
         //render the view
-        require_once __DIR__ . '/Views/'. $requestedController . '.php';
+        require_once __DIR__ . '/Views/'. $data . '.php';
 
 
         // If there is a method - Second parameter

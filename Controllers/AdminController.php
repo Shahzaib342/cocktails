@@ -17,4 +17,9 @@ class AdminController
         return $this->model->admin();
     }
 
+    public function addCocktail()
+    {
+        return $this->model->addCocktail();
+    }
+
 }

@@ -15,7 +15,12 @@ class Admin
 
     public function admin()
     {
-        return $this->message;
+        return 'admin';
+    }
+
+    public function addCocktail()
+    {
+        return 'add-cocktail';
     }
 
 }

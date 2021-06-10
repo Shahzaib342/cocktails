@@ -22,4 +22,9 @@ class adminView
         return $this->controller->admin();
     }
 
+    public function addCocktail()
+    {
+        return $this->controller->addCocktail();
+    }
+
 }
