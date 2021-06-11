@@ -59,7 +59,6 @@ if ($url == '/') {
         //fetch the data passed from model
         $view = $requestedAction == "" ? $requestedController : $requestedAction;
         $data = $viewObj->$view();
-;
         //render the view
         require_once __DIR__ . '/Views/'. $data . '.php';
 
@@ -68,7 +67,7 @@ if ($url == '/') {
         if ($requestedAction != '') {
             // then we call the method via the view
             // dynamic call of the view
-            print $viewObj->$requestedAction($requestedParams);
+            //print $viewObj->$requestedAction($requestedParams);
 
         }
 

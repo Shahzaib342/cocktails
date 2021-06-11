@@ -27,4 +27,9 @@ class homeView
         return $this->controller->home();
     }
 
+    public function cocktailDetails()
+    {
+        return $this->controller->cocktailDetails();
+    }
+
 }

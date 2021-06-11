@@ -15,7 +15,12 @@ class Home
 
     public function home()
     {
-        return $this->message;
+        return 'home';
+    }
+
+    public function cocktailDetails()
+    {
+        return 'cocktail-details';
     }
 
 }

@@ -17,4 +17,9 @@ class HomeController
         return $this->model->home();
     }
 
+    public function cocktailDetails()
+    {
+        return $this->model->cocktailDetails();
+    }
+
 }
