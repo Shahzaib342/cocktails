@@ -41,7 +41,7 @@ include('php/getCocktails.php');
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
-            <form class="card card-sm">
+            <form class="card card-sm" method="get">
                 <div class="card-body row no-gutters align-items-center">
                     <div class="col-auto">
                         <i class="fas fa-search h4 text-body"></i>
@@ -49,7 +49,7 @@ include('php/getCocktails.php');
                     <!--end of col-->
                     <div class="col">
                         <input class="form-control form-control-lg form-control-borderless" type="search"
-                               placeholder="Search topics or keywords">
+                               placeholder="Search topics or keywords" name="search">
                     </div>
                     <!--end of col-->
                     <div class="col-auto">
