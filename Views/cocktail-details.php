@@ -1,6 +1,7 @@
 <?php
-include('config/db.php');
+include ('config/db.php');
 include('php/getCocktails.php');
+include('php/comments.php');
 ?>
 
 <!doctype html>
@@ -68,8 +69,35 @@ include('php/getCocktails.php');
                     </div>
                 </div>
             </div>
+            <div class="row d-flex justify-content-center" style="margin-top: 20px;">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Latest Comments</h4>
+                        </div>
+                        <div class="comment-widgets" style="padding: 20px">
+                            <!-- Comment Row -->
+                            <?php while ($comment = $comments->fetch_assoc()) { ?>
+                            <div class="d-flex flex-row comment-row">
+                                <div class="p-2"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="comment-text active w-100">
+                                    <h6 class="font-medium">Anonymous User</h6> <span class="m-b-15 d-block"><?php  echo $comment["comment"]; ?> </span>
+                                </div>
+                            </div> <!-- Comment Row -->
+                        <?php   } ?>
+                        </div> <!-- Card -->
+                    </div>
+                </div>
+            </div>
+            <form method="post" action="../php/comments.php">
+                <input type="hidden" name="cocktail-id" value="<?php echo  $result["id"]?>">
+                <div class="form-group">
+                    <label for="comment">Your Comment</label>
+                    <textarea name="comment" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
-
     <?php } ?>
 </div>
 
