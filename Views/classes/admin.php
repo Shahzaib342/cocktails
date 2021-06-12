@@ -27,4 +27,9 @@ class adminView
         return $this->controller->addCocktail();
     }
 
+    public function comments()
+    {
+        return $this->controller->comments();
+    }
+
 }

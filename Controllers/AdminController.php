@@ -22,4 +22,9 @@ class AdminController
         return $this->model->addCocktail();
     }
 
+    public function comments()
+    {
+        return $this->model->comments();
+    }
+
 }

@@ -23,4 +23,9 @@ class Admin
         return 'add-cocktail';
     }
 
+    public function comments()
+    {
+        return 'comments';
+    }
+
 }

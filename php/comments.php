@@ -1,6 +1,8 @@
 <?php
 if (isset($_POST["comment"]))
     include('../config/db.php');
+if($_SERVER["REQUEST_URI"] == '/admin/comments')
+    include "config/db.php";
 
 if (isset($_POST["comment"])) {
     $comment = $_POST['comment'];
@@ -14,6 +16,11 @@ if (isset($_POST["comment"])) {
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $sql = "SELECT * FROM comments where cocktail_id = $id";
+    $comments = $mysqli->query($sql);
+}
+
+else {
+    $sql = "SELECT * FROM comments";
     $comments = $mysqli->query($sql);
 }
 
