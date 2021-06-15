@@ -45,7 +45,7 @@ include('php/comments.php');
         <h1>No Cocktail Found</h1>
     <?php } else {
         $result = $result->fetch_assoc(); ?>
-        <h1> Cocktail Details for: <strong><?php echo $result["title"] ?> </strong></h1>
+        <h4> Cocktail Details for: <strong><?php echo $result["title"] ?> </strong> <a style="float: right"  href="/home"> Go Back</a></h4>
 
         <div id="mainContainer">
             <div class="panel panel-default">
