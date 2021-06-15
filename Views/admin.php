@@ -1,5 +1,6 @@
 <?php
 include('config/session.php');
+include('php/getCocktails.php');
 ?>
 
 <!doctype html>
@@ -50,7 +51,31 @@ include('includes/sidebar.php')
         die();
     }
     ?>
-    <h1>This is our cocktail Home Page message: <?php echo $data; ?> </h1>
+    <h1> All Available Cocktails</h1>
+
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Type</th>
+            <th scope="col">Glass Type</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php while ($cocktail = $result->fetch_assoc()) { ?>
+            <tr>
+                <th scope="row"><?php echo $cocktail["id"] ?> </th>
+                <td><?php echo $cocktail["title"] ?> </td>
+                <td><?php echo $cocktail["type"] ?> </td>
+                <td><?php echo $cocktail["glass_type"] ?> </td>
+                <td><a href="/admin/edit?id=<?php echo $cocktail["id"] ?>"> Edit </a> <a
+                            href="/admin?delete-cocktail=<?php echo $cocktail["id"] ?>"> Delete </a></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
 </div>
 
 </body>

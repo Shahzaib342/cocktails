@@ -27,4 +27,9 @@ class AdminController
         return $this->model->comments();
     }
 
+    public function edit()
+    {
+        return $this->model->edit();
+    }
+
 }

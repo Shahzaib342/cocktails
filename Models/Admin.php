@@ -28,4 +28,9 @@ class Admin
         return 'comments';
     }
 
+    public function edit()
+    {
+        return 'edit';
+    }
+
 }

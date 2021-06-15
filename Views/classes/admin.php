@@ -32,4 +32,9 @@ class adminView
         return $this->controller->comments();
     }
 
+    public function edit()
+    {
+        return $this->controller->edit();
+    }
+
 }

@@ -10,7 +10,7 @@ if (isset($_GET["id"])) {
     $sql = "SELECT * FROM cocktails where id = $id";
     $result = $mysqli->query($sql);
 }
-else if ($_GET["search"]) {
+else if (isset($_GET["search"])) {
     $search = $_GET["search"];
     $sql = "SELECT * FROM cocktails where title like '%$search%'";
     $result = $mysqli->query($sql);
@@ -22,6 +22,14 @@ else if (isset($_GET["delete"])) {
     $mysqli->query($sql);
     echo "<script type='text/javascript'>alert('Comment is successfully deleted.');
     window.location='/admin/comments'; </script>";
+}
+
+else if (isset($_GET["delete-cocktail"])) {
+    $delete_id =  $_GET["delete-cocktail"];
+    $sql = "DELETE FROM cocktails where id =  $delete_id";
+    $mysqli->query($sql);
+    echo "<script type='text/javascript'>alert('Cocktail is successfully deleted.');
+    window.location='/admin'; </script>";
 }
 
 else {
