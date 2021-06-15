@@ -37,8 +37,8 @@ if (isset($_POST)) {
         $title = $_POST['title'];
         $type = $_POST['type'];
         $glass_type = $_POST['glass-type'];
-        $instructions = $_POST['instructions'];
-        $ingrediants = $_POST['Ingrediants'];
+        $instructions = htmlentities($_POST['instructions']);
+        $ingrediants = htmlentities($_POST['Ingrediants']);
         $photo = basename($_FILES["fileToUpload"]["name"]);
         $sql = "Update cocktails set title = '$title', type = '$type', glass_type = '$glass_type',  instructions = '$instructions', ingrediants = '$ingrediants', photo = '$photo' where id = '$id'";
 //        $sql = "Update cocktails (title,type,glass_type,instructions,ingrediants,photo) VALUES

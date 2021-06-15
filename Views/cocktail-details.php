@@ -79,7 +79,7 @@ include('php/comments.php');
                             <!-- Comment Row -->
                             <?php while ($comment = $comments->fetch_assoc()) { ?>
                             <div class="d-flex flex-row comment-row">
-                                <div class="p-2"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                <div class="p-2"><img src="../assets/images/avatar.jpeg" alt="user" width="50" class="rounded-circle"></div>
                                 <div class="comment-text active w-100">
                                     <h6 class="font-medium">Anonymous User</h6> <span class="m-b-15 d-block"><?php  echo $comment["comment"]; ?> </span>
                                 </div>

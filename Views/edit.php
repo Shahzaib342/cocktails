@@ -84,12 +84,14 @@ include('includes/sidebar.php')
                 </tr>
                 <tr>
                     <td>Instruction</td>
-                    <td><input type="text" name='instructions' value="<?php echo $result["instructions"] ?>" required>
+                    <td>
+                        <textarea name='instructions' required rows="5" cols="50"><?php echo $result["instructions"] ?></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>Ingrediants</td>
-                    <td><input type="text" name='Ingrediants' value="<?php echo $result["ingrediants"] ?>" required>
+                    <td>
+                        <textarea name='Ingrediants' required rows="5" cols="50"><?php echo $result["ingrediants"] ?></textarea>
                     </td>
                 </tr>
                 <tr>

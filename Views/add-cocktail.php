@@ -81,11 +81,12 @@ include('includes/sidebar.php')
                 </tr>
                 <tr>
                     <td>Instruction</td>
-                    <td><input type="text" name='instructions' required></td>
+                    <td><textarea name='instructions' required rows="5" cols="50"></textarea>
                 </tr>
                 <tr>
                     <td>Ingrediants</td>
-                    <td><input type="text" name='Ingrediants' required></td>
+                    <td>
+                        <textarea name='Ingrediants' required rows="5" cols="50"></textarea>
                 </tr>
                 <tr>
                     <td>Select Photo to upload:</td>
